@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<script type="text/javascript">
+
+var userWins = [];
+var tieWins = [];
+var computerWins =[];
+
+
+while(userWins < 2 && tieWins < 2 && computerWins < 2){
+
+ 
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+ while(userChoice !== "paper"  && userChoice !== "scissors" && userChoice !== "rock")
+ {
+     confirm(userChoice + " invalid entry");
+     userChoice = prompt("please choose rock, paper or scissors?");
+ }
+
+ 
+ 
+     
+var computerChoice = Math.random();
+if (computerChoice <= 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
+} console.log("Computer: " + computerChoice);
+
+var compare = function(choice1, choice2){
+    if(choice1 === choice2)
+    {
+        return "The result is a tie!";
+    }
+    else if(choice1 === "rock")
+    {
+        if(choice2 === "scissors")
+        {
+            return "rock wins";
+        }
+        else
+        {
+            return "paper wins";
+        }
+    }
+    else if(choice1 === "paper")
+    {
+        if(choice2 === "rock")
+        {
+            return "paper wins";
+        }
+        else
+        {
+            return "scissors wins";
+        }
+    }
+    
+    else if(choice1 === "scissors")
+    {
+        if(choice2 === "rock")
+        {
+            return "rocks wins";
+        }
+        else
+        {
+            return "scissors wins";
+        }
+    }
+};
+
+
+
+
+console.log(userChoice);
+var choice = compare(userChoice,computerChoice);
+console.log(choice)
+
+var str = choice.split(" ");
+console.log(str[0])
+  
+// var userWins = new Array();
+
+var count = function(tie, user, computer){
+	var user = 0;
+	var tie = 0; 
+	// looks for the string in the array the begins with "The"
+	if(str[0] === "The" )
+	{
+		// if a tie create an object
+		tie =+ 1;
+		console.log("its a tie buddy");
+		// Puah the object into the empty array
+		tieWins.push(tie);
+		// counts the number of object in the array, which keeps the score
+		console.log("Tie:" + tieWins.length);
+			// if tie win to read out the console
+		if(tieWins.length === 2)
+		{
+		console.log("You Both Won :)");
+		}
+	}
+	else if(userChoice === str[0])
+	{ 
+   		// create a user object 
+   		user =+1 ;
+		console.log("user win");
+		// Puah the object into the empty array
+		userWins.push(user )
+		// counts the number of object in the array, which keeps the score
+		console.log("User:" + userWins.length)
+		// if userWins to read out the console
+		if(userWins.length === 2)
+		{
+		console.log("I Win!, sucked-in Computer");
+		}
+
+	}
+	else
+	{
+	 	computer =+1;
+	 	console.log("computer Wins");
+	 	computerWins.push(computer)
+	 	console.log("Computer:" + computerWins.length)
+	 	if(computerWins.length === 2)
+ 		{
+ 			console.log("Computer Wins!, Your a loser")
+ 		}
+	}
+	
+	
+	};
+
+  count()  
+};
+
+
+
+
+
+// var array = new Array()
+// while(array.length < 3){
+
+// var i = prompt("Add an object");
+// array.push(i);
+
+// }
+// console.log(array.length);	
+
+   
+
+// var n = 0;
+// var x = 0;
+
+// while (n < 3) {
+//   n++;
+//   x += n;
+// }
+
+	</script>
+	 
+</head>
+<body>
+</body>
+</html>
